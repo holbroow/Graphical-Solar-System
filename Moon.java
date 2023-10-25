@@ -19,14 +19,11 @@ public class Moon extends SolarEntity{
     // }
 
     public void orbit(Planet planet)
-    {   
-        //Increase cora by the planets orbit speed so that it keeps up with the planet orbiting the sun.
-        corAngle += planet.getRateOfRotation();
-        //Then increase the angle of the moon to the earth.
-        this.setAngle(this.getAngle() + rateOfRotation);
-        //Bounds of the angle.
+    {
+        corAngle += planet.getRateOfRotation(); // increase center of rotation angle by the planets speed so that it stays in-line with its planet.
+        this.setAngle(this.getAngle() + rateOfRotation); // increase the angle of the moon to the earth.
         if(this.getAngle() >= 360){
-            this.setAngle(0);
+            this.setAngle(0); // ensures that degree angle does not exceed 360.
         }
     }
 
