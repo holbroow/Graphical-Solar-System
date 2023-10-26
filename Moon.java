@@ -9,6 +9,7 @@ public class Moon extends SolarEntity{
         this.rateOfRotation = rateOfRotation;
     }
 
+    @Override
     public void draw(SolarSystem solarSystem) {
         solarSystem.drawSolarObjectAbout(distance, angle, diameter, col, corDistance, corAngle);
     }
