@@ -1,4 +1,4 @@
-public class SolarEntity {
+public abstract class SolarEntity {
     protected double distance;
     protected double angle;
     protected double diameter;
