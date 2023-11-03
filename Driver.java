@@ -1,30 +1,30 @@
 public class Driver {
-    private static Sun sun;
-    private static Planet mercury;
-    private static Planet venus;
-    private static Planet earth;
-    private static Planet mars;
-    private static Planet jupiter;
-    private static Planet saturn;
-    private static Planet uranus;
-    private static Planet neptune;
-    private static Moon earthMoon;
-    private static Moon marsPhobosMoon;
-    private static Moon marsDeimosMoon;
-    private static Moon jupiterEuropaMoon;
-    private static Moon jupiterGanymedeMoon;
-    private static Moon jupiterCallistoMoon;
-    private static Moon jupiterIoMoon;
-    private static Planet saturnRingElem1;
-    private static Planet saturnRingElem2;
-    private static Planet saturnRingElem3;
-    private static Planet saturnRingElem4;
+    public static Sun sun;
+    public static Planet mercury;
+    public static Planet venus;
+    public static Planet earth;
+    public static Planet mars;
+    public static Planet jupiter;
+    public static Planet saturn;
+    public static Planet uranus;
+    public static Planet neptune;
+    public static Moon earthMoon;
+    public static Moon marsPhobosMoon;
+    public static Moon marsDeimosMoon;
+    public static Moon jupiterEuropaMoon;
+    public static Moon jupiterGanymedeMoon;
+    public static Moon jupiterCallistoMoon;
+    public static Moon jupiterIoMoon;
+    public static Planet saturnRingElem1;
+    public static Planet saturnRingElem2;
+    public static Planet saturnRingElem3;
+    public static Planet saturnRingElem4;
 
-    private static int SYSTEM_WIDTH = 1200;
-    private static int SYSTEM_HEIGHT = 1000;
+    public static int SYSTEM_WIDTH = 1200;
+    public static int SYSTEM_HEIGHT = 1000;
 
-    public static void declareObjects() {
-        SolarSystem milkyWay = new SolarSystem(1200, 1000);
+    public static void main(String[] args) {
+        SolarSystem milkyWay = new SolarSystem(SYSTEM_WIDTH, SYSTEM_HEIGHT);
 
         sun = new Sun(milkyWay, 0, 0, 50, "#F9AE28");      // create sun object
         mercury = new Planet(milkyWay, 80, 0, 15, "#C2B396", 1.60745467);
@@ -48,11 +48,6 @@ public class Driver {
         saturnRingElem2 = new Planet(milkyWay, saturn.getDistance(), 0, 65, "BLACK", saturn.getRateOfRotation());
         saturnRingElem3 = new Planet(milkyWay, saturn.getDistance(), 0, 53, "GREY", saturn.getRateOfRotation());
         saturnRingElem4 = new Planet(milkyWay, saturn.getDistance(), 0, 33, "BLACK", saturn.getRateOfRotation());
-    }
-
-    public static void main(String[] args) {
-        SolarSystem milkyWay = new SolarSystem(SYSTEM_WIDTH, SYSTEM_HEIGHT);
-        declareObjects();
 
         Planet planets[] = {mercury, 
                             venus, 
