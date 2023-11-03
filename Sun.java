@@ -1,5 +1,5 @@
 public class Sun extends SolarEntity {
-    public Sun(double distance, double angle, double diameter, String col) {
-        super(distance, angle, diameter, col);
+    public Sun(SolarSystem ss, double distance, double angle, double diameter, String col) {
+        super(ss, distance, angle, diameter, col);
     }
 }

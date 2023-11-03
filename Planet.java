@@ -1,7 +1,7 @@
 public class Planet extends SolarEntity{
     private double rateOfRotation;
-    public Planet(double distance, double angle, double diameter, String col, double rateOfRotation) {
-        super(distance, angle, diameter, col);
+    public Planet(SolarSystem ss, double distance, double angle, double diameter, String col, double rateOfRotation) {
+        super(ss, distance, angle, diameter, col);
         this.rateOfRotation = rateOfRotation;
     }
 

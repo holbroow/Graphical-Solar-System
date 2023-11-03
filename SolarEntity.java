@@ -1,18 +1,20 @@
 public abstract class SolarEntity {
+    protected SolarSystem ss;
     protected double distance;
     protected double angle;
     protected double diameter;
     protected String col;
 
-    public SolarEntity(double distance, double angle, double diameter, String col) {
+    public SolarEntity(SolarSystem ss, double distance, double angle, double diameter, String col) {
+        this.ss = ss;
         this.distance = distance;
         this.angle = angle;
         this.diameter = diameter;
         this.col = col;
     }
 
-    public void draw(SolarSystem solarSystem) {
-        solarSystem.drawSolarObject(distance, angle, diameter, col);
+    public void draw() {
+        ss.drawSolarObject(distance, angle, diameter, col);
     }
 
     // getters

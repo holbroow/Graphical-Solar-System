@@ -2,16 +2,18 @@ public class Moon extends SolarEntity{
     private double corDistance;
     private double corAngle;
     private double rateOfRotation;
-    public Moon(double distance, double angle, double diameter, String col, double corAngle, double corDistance, double rateOfRotation) {
-        super(distance, angle, diameter, col);
+    private Planet planetToOrbit;
+    public Moon(SolarSystem ss, Planet planetToOrbit, double distance, double angle, double diameter, String col, double corAngle, double corDistance, double rateOfRotation) {
+        super(ss, distance, angle, diameter, col);
         this.corDistance = corDistance;
         this.corAngle = corAngle;
         this.rateOfRotation = rateOfRotation;
+        this.planetToOrbit = planetToOrbit;
     }
 
     @Override
-    public void draw(SolarSystem solarSystem) {
-        solarSystem.drawSolarObjectAbout(distance, angle, diameter, col, corDistance, corAngle);
+    public void draw() {
+        ss.drawSolarObjectAbout(distance, angle, diameter, col, corDistance, corAngle);
     }
 
     // public void orbit(Planet planet) {
@@ -19,9 +21,9 @@ public class Moon extends SolarEntity{
     //     this.distance = (planet.getCorDistance());
     // }
 
-    public void orbit(Planet planet)
+    public void orbit()
     {
-        corAngle += planet.getRateOfRotation(); // increase center of rotation angle by the planets speed so that it stays in-line with its planet.
+        corAngle += planetToOrbit.getRateOfRotation(); // increase center of rotation angle by the planets speed so that it stays in-line with its planet.
         this.setAngle(this.getAngle() + rateOfRotation); // increase the angle of the moon to the earth.
         if(this.getAngle() >= 360){
             this.setAngle(0); // ensures that degree angle does not exceed 360.
