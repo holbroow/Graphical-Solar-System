@@ -100,9 +100,6 @@ public class Driver {
                 obj.orbit();
             }
 
-            try {
-                Thread.sleep(1);
-            } catch (Exception e) {}
             milkyWay.finishedDrawing();
         }
     }
