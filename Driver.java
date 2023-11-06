@@ -1,53 +1,36 @@
 public class Driver {
-    public static Sun sun;
-    public static Planet mercury;
-    public static Planet venus;
-    public static Planet earth;
-    public static Planet mars;
-    public static Planet jupiter;
-    public static Planet saturn;
-    public static Planet uranus;
-    public static Planet neptune;
-    public static Moon earthMoon;
-    public static Moon marsPhobosMoon;
-    public static Moon marsDeimosMoon;
-    public static Moon jupiterEuropaMoon;
-    public static Moon jupiterGanymedeMoon;
-    public static Moon jupiterCallistoMoon;
-    public static Moon jupiterIoMoon;
-    public static Planet saturnRingElem1;
-    public static Planet saturnRingElem2;
-    public static Planet saturnRingElem3;
-    public static Planet saturnRingElem4;
-
-    public static int SYSTEM_WIDTH = 1200;
-    public static int SYSTEM_HEIGHT = 1000;
+    public static final int SYSTEM_WIDTH = 1200;
+    public static final int SYSTEM_HEIGHT = 1000;
+    public static final int ASTEROID_AMOUNT = 250;
+    public static final int ASTEROID_MIN_DISTANCE = 270;
+    public static final int ASTEROID_MAX_DISTANCE = 310;
 
     public static void main(String[] args) {
         SolarSystem milkyWay = new SolarSystem(SYSTEM_WIDTH, SYSTEM_HEIGHT);
 
-        sun = new Sun(milkyWay, 0, 0, 50, "#F9AE28");      // create sun object
-        mercury = new Planet(milkyWay, 80, 0, 15, "#C2B396", 1.60745467);
-        venus = new Planet(milkyWay, 100, 0, 25, "#DBAB3F", 1.17595702);
-        earth = new Planet(milkyWay, 150, 0, 37, "#0C0E3F", 1);     // create earth object
-        mars = new Planet(milkyWay, 220, 0, 30, "#D66038", 0.806145064);
-        jupiter = new Planet(milkyWay, 370, 0, 46, "#A45934", 0.438885158);
-        saturn = new Planet(milkyWay, 415, 0, 33, "#BC9154", 0.325386165);
-        uranus = new Planet(milkyWay, 440, 0, 34, "2596BE", 0.228676964);
-        neptune = new Planet(milkyWay, 480, 0, 34, "#4269FD", 0.182337139);
+        Sun sun = new Sun(milkyWay, 0, 0, 50, "#F9AE28");      // create sun object
+        Planet mercury = new Planet(milkyWay, 80, 0, 15, "#C2B396", 1.60745467);
+        Planet venus = new Planet(milkyWay, 100, 0, 25, "#DBAB3F", 1.17595702);
+        Planet earth = new Planet(milkyWay, 150, 0, 37, "#0C0E3F", 1);     // create earth object
+        Planet mars = new Planet(milkyWay, 220, 0, 30, "#D66038", 0.806145064);
+        Planet jupiter = new Planet(milkyWay, 370, 0, 46, "#A45934", 0.438885158);
+        Planet saturn = new Planet(milkyWay, 415, 0, 33, "#BC9154", 0.325386165);
+        Planet uranus = new Planet(milkyWay, 440, 0, 34, "2596BE", 0.228676964);
+        Planet neptune = new Planet(milkyWay, 480, 0, 34, "#4269FD", 0.182337139);
 
-        earthMoon = new Moon(milkyWay, earth, 32, 0, 10, "GREY", 0, earth.getDistance(), 0.034295302); // 0.034295302 speed relative to earth(1)
-        marsPhobosMoon = new Moon(milkyWay, mars, 25, 0, 7, "#97897F", 0, mars.getDistance(), 0.0717449664);
-        marsDeimosMoon = new Moon(milkyWay, mars, 25, 0, 7, "#907C6F", 0, mars.getDistance(), 0.0453456376);
-        jupiterEuropaMoon = new Moon(milkyWay, jupiter, 30, 0, 10, "#A38770", 0, jupiter.getDistance(), 0.461073826);
-        jupiterGanymedeMoon = new Moon(milkyWay, jupiter, 30, 0, 5, "#6D5A4A", 0, jupiter.getDistance(), 0.365100671);
-        jupiterCallistoMoon = new Moon(milkyWay, jupiter, 30, 0, 5, "#434135", 0, jupiter.getDistance(), 0.275167785);
-        jupiterIoMoon = new Moon(milkyWay, jupiter, 30, 0, 5, "#D5C85C", 0, jupiter.getDistance(), 0.581677852);
+        Moon earthMoon = new Moon(milkyWay, earth, 32, 0, 10, "GREY", 0, earth.getDistance(), 3.4295302); // 34.295302% speed relative to earth(1)
+        Moon marsPhobosMoon = new Moon(milkyWay, mars, 25, 0, 7, "#97897F", 0, mars.getDistance(), 7.17449664);
+        Moon marsDeimosMoon = new Moon(milkyWay, mars, 25, 0, 7, "#907C6F", 0, mars.getDistance(), 4.53456376);
+        Moon jupiterEuropaMoon = new Moon(milkyWay, jupiter, 30, 0, 10, "#A38770", 0, jupiter.getDistance(), 4.61073826);
+        Moon jupiterGanymedeMoon = new Moon(milkyWay, jupiter, 30, 0, 5, "#6D5A4A", 0, jupiter.getDistance(), 3.65100671);
+        Moon jupiterCallistoMoon = new Moon(milkyWay, jupiter, 30, 0, 5, "#434135", 0, jupiter.getDistance(), 2.75167785);
+        Moon jupiterIoMoon = new Moon(milkyWay, jupiter, 30, 0, 5, "#D5C85C", 0, jupiter.getDistance(), 5.81677852);
 
-        saturnRingElem1 = new Planet(milkyWay, saturn.getDistance(), 0, 92, "GREY", saturn.getRateOfRotation());
-        saturnRingElem2 = new Planet(milkyWay, saturn.getDistance(), 0, 65, "BLACK", saturn.getRateOfRotation());
-        saturnRingElem3 = new Planet(milkyWay, saturn.getDistance(), 0, 53, "GREY", saturn.getRateOfRotation());
-        saturnRingElem4 = new Planet(milkyWay, saturn.getDistance(), 0, 33, "BLACK", saturn.getRateOfRotation());
+        Planet saturnRingElem1 = new Planet(milkyWay, saturn.getDistance(), 0, 92, "GREY", saturn.getRateOfRotation());
+        Planet saturnRingElem2 = new Planet(milkyWay, saturn.getDistance(), 0, 65, "BLACK", saturn.getRateOfRotation());
+        Planet saturnRingElem3 = new Planet(milkyWay, saturn.getDistance(), 0, 53, "GREY", saturn.getRateOfRotation());
+        Planet saturnRingElem4 = new Planet(milkyWay, saturn.getDistance(), 0, 33, "BLACK", saturn.getRateOfRotation());
+
 
         Planet planets[] = {mercury, 
                             venus, 
@@ -71,6 +54,15 @@ public class Driver {
                                 saturnRingElem3,
                                 saturnRingElem4};
 
+        Asteroid asteroids[] = new Asteroid[ASTEROID_AMOUNT];
+
+        for (int i = 0; i < ASTEROID_AMOUNT; i++) {
+            int randomStartDistance = ASTEROID_MIN_DISTANCE + ((int)(Math.random() * ((ASTEROID_MAX_DISTANCE - ASTEROID_MIN_DISTANCE) + 1)));
+            int randomStartAngle = 0 + ((int)(Math.random() * ((360 - 0) + 1)));
+            asteroids[i] = new Asteroid(milkyWay, randomStartDistance, randomStartAngle, 3, "FFFFFF", 100);
+        }
+
+
         while (true) {
             // Draw all objects and intitiate orbit function for each
 
@@ -84,6 +76,9 @@ public class Driver {
             for (Moon obj : moons) {
                 obj.draw();
             }
+            for (Asteroid obj : asteroids) {
+                obj.draw();
+            }
 
             for (Planet obj : ringElements) {
                 obj.orbit();
@@ -92,6 +87,9 @@ public class Driver {
                 obj.orbit();
             }
             for (Moon obj : moons) {
+                obj.orbit();
+            }
+            for (Asteroid obj : asteroids) {
                 obj.orbit();
             }
 
