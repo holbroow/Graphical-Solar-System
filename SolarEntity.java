@@ -1,3 +1,7 @@
+/**
+ * This abstract class provides a parent class to be extended by multiple 'Solar entity' classes in the Milky Way.
+ * @author Will Holbrook
+ */
 public abstract class SolarEntity {
     protected SolarSystem ss;
     protected double distance;

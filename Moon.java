@@ -1,3 +1,7 @@
+/**
+ * This class extends the Solar Entity class to model a Moon.
+ * @author Will Holbrook
+ */
 public class Moon extends SolarEntity{
     private double corDistance;
     private double corAngle;

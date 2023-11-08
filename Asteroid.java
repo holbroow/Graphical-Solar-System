@@ -1,3 +1,7 @@
+/**
+ * This class extends the Solar Entity class to model an Asteroid.
+ * @author Will Holbrook
+ */
 public class Asteroid extends SolarEntity{
     private double rateOfRotation;
     private int minDistance;
