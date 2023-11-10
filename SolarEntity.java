@@ -11,12 +11,12 @@ public abstract class SolarEntity {
 
     /**
      * Takes parameters for a basic Solar Entity (e.g. Moon, Planet, etc).
-     * 
-     * @param ss
-     * @param distance
-     * @param angle
-     * @param diameter
-     * @param col
+     *
+     * @param ss Solar System object.
+     * @param distance The object's distance to the point of rotation.
+     * @param angle The object's angle around the rotation.
+     * @param diameter The object's diameter.
+     * @param col The object's color.
      */
     public SolarEntity(SolarSystem ss, double distance, double angle, double diameter, String col) {
         this.ss = ss;
@@ -26,41 +26,70 @@ public abstract class SolarEntity {
         this.col = col;
     }
 
+    /**
+     * Function to draw the object in the Solar System.
+     */
     public void draw() {
         ss.drawSolarObject(distance, angle, diameter, col);
     }
 
-    // getters
+    /**
+     * @return the distance for this object.
+     */
     public double getDistance() {
         return this.distance;
     }
+
+    /**
+     * @return the center of rotation distance for this object.
+     */
     public double getAngle() {
         return this.angle;
     }
+
+    /**
+     * @return the diameter for this object.
+     */
     public double getDiameter() {
         return this.diameter;
     }
+
+    /**
+     * @return the color for this object.
+     */
     public String getColour() {
         return this.col;
     }
 
-    // setters
+    /**
+     * Sets a new distance for this object.
+     * @param distance
+     */
     public void setDistance(double newDistance) {
         this.distance = newDistance;
     }
+
+    /**
+     * Sets a new angle for this object.
+     * @param angle
+     */
     public void setAngle(double newAngle) {
         this.angle = newAngle;
     }
+
+    /**
+     * Sets a new diameter for this object.
+     * @param diameter
+     */
     public void setDiameter(double newDiameter) {
         this.diameter = newDiameter;
     }
+
+    /**
+     * Sets a new color for this object.
+     * @param color
+     */
     public void setColour(double newColour) {
         this.angle = newColour;
-    }
-    public void setCorDistance(double newCorDistance) {
-        this.angle = newCorDistance;
-    }
-    public void setCorAngle(double newCorAngle) {
-        this.angle = newCorAngle;
     }
 }

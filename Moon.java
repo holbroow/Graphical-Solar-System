@@ -11,15 +11,15 @@ public class Moon extends SolarEntity{
     /**
      * Creates a Moon object.
      * 
-     * @param ss
-     * @param planetToOrbit
-     * @param distance
-     * @param angle
-     * @param diameter
-     * @param col
-     * @param corAngle
-     * @param corDistance
-     * @param rateOfRotation
+     * @param ss Solar System object.
+     * @param distance The object's distance to the point of rotation.
+     * @param angle The object's angle around the rotation.
+     * @param diameter The object's diameter.
+     * @param col The object's color.
+     * @param corDistance The distance part of the polar co-ordinate about which this object orbits.
+     * @param corAngle The angular part of the polar co-ordinate about which this object orbits.
+     * @param rateOfRotation The rate at which the object rotates/orbits.
+     * @param planetToOrbit The planet that this object will orbit.
      */
     public Moon(SolarSystem ss, Planet planetToOrbit, double distance, double angle, double diameter, String col, double corAngle, double corDistance, double rateOfRotation) {
         super(ss, distance, angle, diameter, col);
@@ -34,11 +34,9 @@ public class Moon extends SolarEntity{
         ss.drawSolarObjectAbout(distance, angle, diameter, col, corDistance, corAngle);
     }
 
-    // public void orbit(Planet planet) {
-    //     this.corAngle = corAngle + rateOfRotation;
-    //     this.distance = (planet.getCorDistance());
-    // }
-
+    /**
+     * Function to make the object orbit around a Planet.
+     */
     public void orbit()
     {
         corAngle += planetToOrbit.getRateOfRotation(); // increase center of rotation angle by the planets speed so that it stays in-line with its planet.
@@ -48,18 +46,31 @@ public class Moon extends SolarEntity{
         }
     }
 
-    // getters
+    /**
+     * @return the center of rotation distance for this object.
+     */
     public double getCorDistance() {
         return this.corDistance;
     }
+
+    /**
+     * @return the center of rotation angle for this object.
+     */
     public double getCorAngle() {
         return this.corAngle;
     }
+    
+    /**
+     * @return the rate of rotation for this object.
+     */
     public double getRateOfRotation() {
         return this.rateOfRotation;
     }
 
-    // setters
+    /**
+     * Sets a new rate of rotation for this object.
+     * @param rateOfRotation
+     */
     public void setRateOfRotation(double newRateOfRotation) {
         this.rateOfRotation = newRateOfRotation;
     }
