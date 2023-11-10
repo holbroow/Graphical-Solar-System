@@ -4,6 +4,17 @@
  */
  public class Planet extends SolarEntity{
     private double rateOfRotation;
+
+    /**
+     * Creates a Planet object.
+     * 
+     * @param ss
+     * @param distance
+     * @param angle
+     * @param diameter
+     * @param col
+     * @param rateOfRotation
+     */
     public Planet(SolarSystem ss, double distance, double angle, double diameter, String col, double rateOfRotation) {
         super(ss, distance, angle, diameter, col);
         this.rateOfRotation = rateOfRotation;

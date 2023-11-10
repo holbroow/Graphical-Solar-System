@@ -7,6 +7,16 @@ public class Asteroid extends SolarEntity{
     private int minDistance;
     private int maxDistance;
     private int direction;
+    /**
+     * Creates an asteroid object.
+     * 
+     * @param ss
+     * @param distance
+     * @param angle
+     * @param diameter
+     * @param col
+     * @param rateOfRotation
+     */
     public Asteroid(SolarSystem ss, double distance, double angle, double diameter, String col, double rateOfRotation) {
         super(ss, distance, angle, diameter, col);
         this.rateOfRotation = rateOfRotation;

@@ -7,6 +7,20 @@ public class Moon extends SolarEntity{
     private double corAngle;
     private double rateOfRotation;
     private Planet planetToOrbit;
+
+    /**
+     * Creates a Moon object.
+     * 
+     * @param ss
+     * @param planetToOrbit
+     * @param distance
+     * @param angle
+     * @param diameter
+     * @param col
+     * @param corAngle
+     * @param corDistance
+     * @param rateOfRotation
+     */
     public Moon(SolarSystem ss, Planet planetToOrbit, double distance, double angle, double diameter, String col, double corAngle, double corDistance, double rateOfRotation) {
         super(ss, distance, angle, diameter, col);
         this.corDistance = corDistance;

@@ -9,6 +9,15 @@ public abstract class SolarEntity {
     protected double diameter;
     protected String col;
 
+    /**
+     * Takes parameters for a basic Solar Entity (e.g. Moon, Planet, etc).
+     * 
+     * @param ss
+     * @param distance
+     * @param angle
+     * @param diameter
+     * @param col
+     */
     public SolarEntity(SolarSystem ss, double distance, double angle, double diameter, String col) {
         this.ss = ss;
         this.distance = distance;
